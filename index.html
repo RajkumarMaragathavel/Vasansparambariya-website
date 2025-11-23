@@ -1,173 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vasan's Parambariya</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vasan's Parambariya — Premium Fast-Casual Veg</title>
+  <style>
+    :root{
+      --green:#154826;
+      --gold:#f0d666;
+      --muted:#faf8f3;
+      --radius:18px;
+      --maxw:1080px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui;background:var(--muted);color:#1a1a1a}
 
-    <style>
-        :root{
-            --green:#1f3b2f; 
-            --gold:#d8c372;
-            --bg:#f7f5f2;
-        }
+    /* HEADER */
+    header{
+      padding:20px 18px;
+      background:white;
+      border-bottom:1px solid #e5e5e5;
+    }
+    .nav-wrap{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .logo img{height:90px}
 
-        body {
-            margin: 0;
-            font-family: "Inter", Arial, sans-serif;
-            background: var(--bg);
-            color: #2b2b2b;
-        }
+    /* HERO */
+    .hero{
+      position:relative;
+      height:78vh;
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      text-align:center;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url('assets/outlet-bg.jpg') center/cover no-repeat;
+      filter:brightness(0.35);
+      z-index:-2;
+    }
+    .hero-text{
+      max-width:720px;
+      padding:20px;
+    }
+    .hero h1{font-size:44px;font-weight:800;line-height:1.2;margin-bottom:14px}
+    .hero p{font-size:18px;opacity:0.92;margin-bottom:22px;line-height:1.6}
 
-        /* HEADER */
-        header {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 22px 40px;
-            background: #ffffff;
-            box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+    .btn{
+      display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;text-decoration:none;margin:6px;
+    }
+    .btn-primary{background:var(--gold);color:#154826}
+    .btn-outline{border:2px solid var(--gold);color:var(--gold)}
 
-        header img {
-            height: 70px;
-        }
+    /* ABOUT BLOCK */
+    .section{max-width:var(--maxw);margin:60px auto;padding:0 18px}
+    .card{background:white;border-radius:var(--radius);padding:30px;box-shadow:0 8px 32px rgba(0,0,0,0.06)}
+    h2{color:var(--green);margin-bottom:12px;font-size:30px}
+    p{margin:12px 0;line-height:1.7;color:#444}
 
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, var(--green), #0e1c15);
-            height: 70vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--gold);
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.4rem;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 760px;
-            margin: 0 auto;
-            line-height: 1.6;
-            opacity: 0.95;
-        }
-
-        /* ABOUT */
-        .section {
-            padding: 80px 12%;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 32px;
-            border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(20,30,20,0.06);
-        }
-
-        h2 {
-            color: var(--green);
-            font-size: 2rem;
-            margin-bottom: 14px;
-        }
-
-        p {
-            color: #444;
-            line-height: 1.75;
-            font-size: 1.1rem;
-        }
-
-        .features {
-            margin-top: 22px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 14px;
-        }
-
-        .feature {
-            background: #faf9f7;
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .feature strong {
-            color: var(--green);
-            display:block;
-            margin-bottom:6px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--green);
-            color: var(--gold);
-            text-align: center;
-            padding: 28px 10px;
-            margin-top: 40px;
-        }
-    </style>
+    /* FOOTER */
+    footer{
+      background:var(--green);
+      color:var(--gold);
+      text-align:center;
+      padding:20px;
+      margin-top:60px;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
 <header>
-    <img src="assets/vasans_logo.png" alt="Vasan's Parambariya Logo" />
+  <div class="nav-wrap">
+    <div class="logo">
+      <img src="assets/vasans_logo.png" alt="Vasan's Logo" />
+    </div>
+  </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-    <div>
-        <h1>Vasan’s Parambariya</h1>
-        <p>
-            A fast-casual vegetarian chain redefining quality in Tier-3 & Tier-4 towns. 
-            Built on integrity, consistency, and a commitment to serving honest food.
-        </p>
-    </div>
+  <div class="hero-text">
+    <h1>Premium Fast‑Casual Vegetarian — Made for Tier 3 & 4 India</h1>
+    <p>We bring disciplined quality, system-driven consistency, and honest vegetarian food to towns that deserve world-class standards. Vasan's Group stands for integrity — every plate is measured, calibrated, and prepared with respect.</p>
+    <a href="#about" class="btn btn-primary">About Us</a>
+    <a href="#contact" class="btn btn-outline">Contact</a>
+  </div>
 </section>
 
-<!-- ABOUT SECTION -->
-<section class="section">
-    <div class="card">
-        <h2>Our Promise</h2>
-        <p>
-            Great food should be available in every town — not only big cities.
-            We run disciplined kitchens with strict standardisation, measured ingredients,
-            and honest preparation. This is the Vasan’s Group philosophy:
-            <strong>Integrity, consistency, and respect for the customer.</strong>
-        </p>
+<section id="about" class="section">
+  <div class="card">
+    <h2>Who We Are</h2>
+    <p>Vasan's Parambariya is a fast-growing vegetarian chain redefining dining standards in developing towns. Our philosophy is simple: disciplined systems, premium sourcing, and absolute respect for the customer. No shortcuts. No inconsistency. No compromise.</p>
 
-        <div class="features">
-            <div class="feature">
-                <strong>Consistency</strong>
-                Pre-measured recipes & calibrated systems.
-            </div>
-
-            <div class="feature">
-                <strong>Integrity</strong>
-                Transparent sourcing & honest values.
-            </div>
-
-            <div class="feature">
-                <strong>Local Growth</strong>
-                Designed for Tier-3 & Tier-4 expansion.
-            </div>
-        </div>
-    </div>
+    <p>Every branch in the Vasan's Group operates on one principle — <strong>integrity</strong>. From pre-measured ingredients to strict cooking protocols, we ensure the same taste, hygiene, and hospitality across every outlet, every day.</p>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<section id="contact" class="section">
+  <div class="card">
+    <h2>Contact</h2>
+    <p><strong>Location:</strong> Mayiladuthurai, Tamil Nadu</p>
+    <p><strong>Hours:</strong> 6 AM – 11 PM</p>
+    <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
+  </div>
+</section>
+
 <footer>
-    © 2025 Vasan's Parambariya — All Rights Reserved
+  © 2025 Vasan's Parambariya — All Rights Reserved
 </footer>
 
 </body>
